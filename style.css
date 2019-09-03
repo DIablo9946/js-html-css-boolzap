@@ -1,0 +1,109 @@
+/* Impostazioni generali */
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #1EBEA5;
+  z-index: 0;
+  height: 15vh;
+  width: 100%;
+}
+
+#container {
+  background-color: #D9DBD4;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+main {
+  z-index: 10;
+  width: 80%;
+  height: 90vh;
+  position: fixed;
+  top: 50px;
+  background-color: white;
+}
+
+/* Mi occupo della parte sinistra */
+
+
+#left {
+  width: 25%;
+  background-color: yellow;
+  height: 100%;
+  float: left;
+}
+
+.head {
+  width: 100%;
+  height: 8%;
+  background-color: gray;
+}
+
+#left .head {
+  border-right: 1px black solid;
+}
+
+#notifica {
+  width: 100%;
+  height: 10%;
+  background-color: blue;
+}
+
+#searchbar {
+  width : 100%;
+  height: 6%;
+  background-color: white;
+}
+
+#friendlist {
+  height: 76%;
+  width: 100%;
+  background-color: pink;
+  overflow-y: scroll;
+}
+
+.friend {
+    height: 65px;
+    width: 100%;
+    background-color: green;
+    border-bottom: gray 1px solid;
+}
+
+/* Mi occupo della parte destra */
+
+#right {
+  width: 75%;
+  background-color: red;
+  height: 100%;
+  float: right;
+  position: relative;
+}
+
+#center {
+  background-image: url("img/back.png");
+  width: 100%;
+  height: 84%;
+}
+
+.foot {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  background-color: white;
+  bottom: 0;
+  position: absolute;
+}
+
+
+/* Mi occupo delle altre funzionalita tipo hover  */
+
+.friend:hover {
+  opacity : .7;
+}
