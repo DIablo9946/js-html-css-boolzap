@@ -9,23 +9,32 @@
 // Click sul contatto mostra la conversazione del contatto cliccato, è possibile inserire nuovi messaggi per ogni conversazione
 // Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 
+function mandaMsg(){
+console.log("mandaMsg");
+
+var inputVal = $("#sendText").val();
+
+var msgElement = $("#template .message").clone();
+var msgElementdiv = $("#template2 .holder").clone();
+
+
+msgElement.text(inputVal);
+// $("#center").append(msgElement);
+$("#center").append("holder");
+$(".holder").append(msgElement);
+
+$("#sendText").val(" ");
+};
+
+
 
 $(document).ready(function(){
 
 $("#sendMsg").click(mandaMsg);
 
 
-function mangaMsg(){
 
-var inputVal = $("#sendText").val();
-
-var msgElement = $("#template .message").clone();
-msgElement.text(inputVal);
-$("#center").append(msgElement);
-
-$("#sendText").val(" ");
-};
-
+// $("#center").append("<div class='holder'>" + msgElement + "</div>");
 
 
 
