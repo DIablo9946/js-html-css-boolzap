@@ -35,7 +35,6 @@ main {
 
 #left {
   width: 25%;
-  background-color: yellow;
   height: 100%;
   float: left;
 }
@@ -43,7 +42,7 @@ main {
 .head {
   width: 100%;
   height: 8%;
-  background-color: gray;
+  background-color: #EEEEEE;
 }
 
 #left .head {
@@ -53,26 +52,41 @@ main {
 #notifica {
   width: 100%;
   height: 10%;
-  background-color: blue;
+  background-color: #9DE1FE;
 }
 
 #searchbar {
   width : 100%;
   height: 6%;
   background-color: white;
+  border-bottom: 1px black solid;
+  background-color: #EEEEEE;
+  padding-top: 4px;
+}
+
+
+#inputbar {
+  width: 95%;
+  height: 70%;
+  border-radius: 70px;
+  margin: auto;
+}
+
+#searchbar input {
+  width: 100%;
+  height: 80%;
+  padding: 20px;
 }
 
 #friendlist {
   height: 76%;
   width: 100%;
-  background-color: pink;
   overflow-y: scroll;
 }
 
 .friend {
-    height: 65px;
+    height: 80px;
     width: 100%;
-    background-color: green;
     border-bottom: gray 1px solid;
 }
 
@@ -80,7 +94,6 @@ main {
 
 #right {
   width: 75%;
-  background-color: red;
   height: 100%;
   float: right;
   position: relative;
@@ -90,20 +103,79 @@ main {
   background-image: url("img/back.png");
   width: 100%;
   height: 84%;
+  overflow-y: scroll;
+}
+
+#theyMsg {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 20px;
+  width: 200px;
+  margin: 20px 0px 0px 20px;
+}
+
+.message {
+  background-color: green;
+  color: black;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 20px;
+  width: 200px;
+  margin: 20px 20px 0px 0px;
+  float: right;
 }
 
 .foot {
   width: 100%;
   height: 8%;
   display: flex;
-  background-color: white;
+  background-color: #EFEFEF;
   bottom: 0;
   position: absolute;
 }
+
+.foot input {
+  width: 75%;
+  height: 60%;
+  margin: auto;
+}
+
+#sendMsg {
+  position: absolute;
+  right: 10%;
+  top: 40%;
+}
+
 
 
 /* Mi occupo delle altre funzionalita tipo hover  */
 
 .friend:hover {
-  opacity : .7;
+  background-color: rgb(220,220,220); opacity: 1;
+}
+
+.friend img, .head img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  float: left;
+  padding: 10px;
+  display: block;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
+
+.head img {
+  margin: 0;
+}
+
+.friend h2 {
+  display: block;
+  padding: 5% 0 0 0;
+}
+
+#template {
+  display: none;
 }
