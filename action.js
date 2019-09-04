@@ -19,7 +19,7 @@ var msgElement = $("#template .message").clone();
 
 
 msgElement.text(inputVal);
-$("#center").append("<div class='holder'>" + msgElement + "</div>");
+$("#center").append(msgElement);
 $("#sendText").val(" ");
 
 setTimeout(function(){
