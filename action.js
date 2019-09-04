@@ -15,16 +15,23 @@ console.log("mandaMsg");
 var inputVal = $("#sendText").val();
 
 var msgElement = $("#template .message").clone();
-var msgElementdiv = $("#template2 .holder").clone();
+
 
 
 msgElement.text(inputVal);
-// $("#center").append(msgElement);
-$("#center").append("holder");
-$(".holder").append(msgElement);
-
+$("#center").append("<div class='holder'>" + msgElement + "</div>");
 $("#sendText").val(" ");
+
+setTimeout(function(){
+  var inviaMsg;
+  inviaMsg = "<div class='theyMsg'>" + "Va bene" + "</div>";
+  $("#center").append(inviaMsg);
+}, 1000);
+
+
+
 };
+
 
 
 
@@ -35,11 +42,6 @@ $("#sendMsg").click(mandaMsg);
 
 
 // $("#center").append("<div class='holder'>" + msgElement + "</div>");
-
-
-
-
-
 
 
 
