@@ -16,21 +16,60 @@ var inputVal = $("#sendText").val();
 
 var msgElement = $("#template .message").clone();
 
-
-
-msgElement.text(inputVal);
-$("#center").append(msgElement);
+msgElement.html(inputVal + "<div class='eliminato'><span class='del'>Elimina il messaggio</span></div>");
+$(".chat.active").append(msgElement);
 $("#sendText").val(" ");
 
 setTimeout(function(){
   var inviaMsg;
-  inviaMsg = "<div class='theyMsg'>" + "Va bene" + "</div>";
-  $("#center").append(inviaMsg);
+  inviaMsg = "<div class='theyMsg'>" + "Va bene" + "<div class='eliminato'><span class='del'>Elimina il messaggio</span></div>" + "</div>";
+  $(".chat.active").append(inviaMsg);
 }, 1000);
-
-
-
 };
+
+function trova(){
+  var lettera = $(this).val().toLowerCase();
+
+  console.log(lettera);
+
+  $(".friend").each(function (){
+    var contatto = $(this).find("h2").text().toLowerCase();
+    console.log(contatto);
+    // $(this).show();
+
+    if (!contatto.includes(lettera)){
+      $(this).hide();
+    } else {
+      $(this).show();
+    }
+  });
+};
+
+
+// Uso gli attributi per selezionare le chat desiderate
+
+$(".friend").click(function(){
+  var refchat = $(this).attr("refchat");
+  console.log(refchat);
+  $(".chat").removeClass("active");
+  $(".chat[refchat='"+ refchat +"']").addClass("active");
+});
+
+
+
+
+// Provo a creare una funzione per eliminare i messaggi
+
+$("#center").on("click", ".message, .theyMsg", function(){
+  $(this).find('.eliminato').toggleClass("active");
+});
+
+// Funzione per eliminare i messaggi
+
+//$(".del").click(function(){
+$(document).on('click', '.del', function() {
+  $(this).parent().parent().remove();
+});
 
 
 
@@ -38,7 +77,10 @@ setTimeout(function(){
 $(document).ready(function(){
 
 $("#sendMsg").click(mandaMsg);
+$("#seachFriends").keyup(trova);
 
+// Appendo classe eliminato ai messaggi
+ $("<div class='eliminato'></div>").appendTo(".messaggio", ".theyMsg");
 
 
 // $("#center").append("<div class='holder'>" + msgElement + "</div>");
