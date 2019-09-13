@@ -55,7 +55,12 @@ $(".friend").click(function(){
   $(".chat[refchat='"+ refchat +"']").addClass("active");
 });
 
-
+$(".friend").click(function(){
+  var refhead = $(this).attr("refhead");
+  console.log(refhead);
+  $(".headpeople").removeClass("active");
+  $(".headpeople[refhead='"+ refhead +"']").addClass("active");
+});
 
 
 // Provo a creare una funzione per eliminare i messaggi
@@ -78,6 +83,11 @@ $(document).ready(function(){
 
 $("#sendMsg").click(mandaMsg);
 $("#seachFriends").keyup(trova);
+$("#sendText").keypress(function() {
+    if(event.which == 13) {
+        mandaMsg();
+    }
+});
 
 // Appendo classe eliminato ai messaggi
  $("<div class='eliminato'></div>").appendTo(".messaggio", ".theyMsg");

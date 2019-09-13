@@ -210,6 +210,14 @@ main {
   left: 10px;
 }
 
+.headpeople {
+  display: none;
+}
+
+.headpeople h2 {
+  padding: 20px 0px;
+}
+
 .active {
   display: block;
 }
